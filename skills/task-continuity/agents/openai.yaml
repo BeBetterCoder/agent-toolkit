@@ -1,0 +1,6 @@
+interface:
+  display_name: "Task Continuity"
+  short_description: "Save and restore durable task checkpoints"
+  default_prompt: "Use $task-continuity to checkpoint the current task for a future session."
+policy:
+  allow_implicit_invocation: true

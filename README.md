@@ -7,6 +7,7 @@ Workflows、Prompts、Configs 和配套示例。
 
 | Project | Type | Description |
 | --- | --- | --- |
+| [`task-continuity`](skills/task-continuity/) | Agent skill | 在额度或上下文不足前保存可恢复的任务检查点，并在新会话中安全续接。 |
 | [`jev-decision-mcp`](mcp-servers/jev-decision-mcp/) | MCP server | 使用 Jev / TypeSafe 进行带置信度门控的结构化语义判断。 |
 
 ## Repository layout
