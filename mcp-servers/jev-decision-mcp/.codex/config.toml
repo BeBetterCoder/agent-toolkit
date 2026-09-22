@@ -1,0 +1,31 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+[mcp_servers.jev_decision]
+command = "uv"
+args = ["run", "--frozen", "jev-decision-mcp"]
+cwd = ".."
+env_vars = ["TYPESAFE_API_KEY"]
+startup_timeout_sec = 15
+tool_timeout_sec = 60
+required = false
+enabled_tools = [
+  "jev_decide",
+  "jev_judge_batch",
+  "jev_list_policies",
+]
+# The judgment tools send state and questions to api.typesafe.ai. Keep the
+# repository default explicit; users may opt into "approve" locally.
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.jev_decision.env]
+TYPESAFE_LOG_LEVEL = "warning"
+
+[mcp_servers.jev_decision.tools.jev_list_policies]
+approval_mode = "approve"
+output_token_limit = 3000
+
+[mcp_servers.jev_decision.tools.jev_decide]
+output_token_limit = 6000
+
+[mcp_servers.jev_decision.tools.jev_judge_batch]
+output_token_limit = 12000
