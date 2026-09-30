@@ -1,0 +1,380 @@
+{
+  "config": {
+    "confidence_threshold": 0.8,
+    "tiers": {
+      "FAST": {
+        "model": "gpt-6-luna",
+        "effort": "low"
+      },
+      "BALANCED": {
+        "model": "gpt-6-sol",
+        "effort": "medium"
+      },
+      "DEEP": {
+        "model": "gpt-6-sol",
+        "effort": "high"
+      }
+    }
+  },
+  "summary": {
+    "cases": 20,
+    "choice_accuracy": 1.0,
+    "effective_accuracy": 1.0,
+    "fallbacks": {
+      "low_confidence": 2
+    },
+    "median_routing_latency_ms": 338.3,
+    "expected_tiers": {
+      "FAST": 7,
+      "BALANCED": 7,
+      "DEEP": 6
+    },
+    "effective_tiers": {
+      "FAST": 7,
+      "BALANCED": 7,
+      "DEEP": 6
+    }
+  },
+  "results": [
+    {
+      "id": "F01",
+      "prompt": "用两句话解释 git diff --check 这个命令的作用。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "BALANCED": 0.0,
+        "DEEP": 0.0,
+        "FAST": 1.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 612.5
+    },
+    {
+      "id": "F02",
+      "prompt": "在当前仓库里找到 choose_route 函数的定义位置，只告诉我文件和行号。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "FAST": 1.0,
+        "BALANCED": 0.0,
+        "DEEP": 0.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 414.5
+    },
+    {
+      "id": "F03",
+      "prompt": "把 README.md 中的‘安装步聚’改成‘安装步骤’，只修改这个错别字。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "BALANCED": 0.0,
+        "DEEP": 0.0,
+        "FAST": 1.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 333.3
+    },
+    {
+      "id": "F04",
+      "prompt": "将 config.example.toml 中的注释‘Change to route’改成‘Set to route’，不改其他内容。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "FAST": 1.0,
+        "BALANCED": 0.0,
+        "DEEP": 0.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 292.5
+    },
+    {
+      "id": "F05",
+      "prompt": "给 safe_task 函数补一句文档说明，写明它会截断输入，不修改函数实现。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "BALANCED": 0.0,
+        "DEEP": 0.0,
+        "FAST": 1.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 398.6
+    },
+    {
+      "id": "F06",
+      "prompt": "用三句话解释什么是竞态条件，不分析具体代码。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "DEEP": 0.0,
+        "FAST": 1.0,
+        "BALANCED": 0.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 307.2
+    },
+    {
+      "id": "F07",
+      "prompt": "简短解释 SQL 注入的基本原理，不分析具体项目。",
+      "expected": "FAST",
+      "jev_choice": "FAST",
+      "confidence": 1.0,
+      "probabilities": {
+        "FAST": 1.0,
+        "BALANCED": 0.0,
+        "DEEP": 0.0
+      },
+      "effective_tier": "FAST",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-luna",
+      "reasoning_effort": "low",
+      "routing_latency_ms": 327.2
+    },
+    {
+      "id": "B01",
+      "prompt": "为 jev-codex 增加 --dry-run 参数，只输出本轮路由结果而不启动 Codex，并更新命令行帮助和测试。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.91,
+      "probabilities": {
+        "DEEP": 0.0,
+        "FAST": 0.06,
+        "BALANCED": 0.94
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 330.4
+    },
+    {
+      "id": "B02",
+      "prompt": "修复配置文件里 effort 值无效时错误提示不清楚的问题，并补充回归测试。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.86,
+      "probabilities": {
+        "BALANCED": 0.91,
+        "FAST": 0.09,
+        "DEEP": 0.0
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 446.4
+    },
+    {
+      "id": "B03",
+      "prompt": "调查为什么路径相关的测试在 Linux CI 通过、在 macOS 本地失败，修复问题并说明原因。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.98,
+      "probabilities": {
+        "FAST": 0.0,
+        "DEEP": 0.01,
+        "BALANCED": 0.99
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 343.3
+    },
+    {
+      "id": "B04",
+      "prompt": "给完成事件日志增加本轮选中的 tier 字段，更新相关实现和测试。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.97,
+      "probabilities": {
+        "BALANCED": 0.98,
+        "DEEP": 0.0,
+        "FAST": 0.02
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 306.8
+    },
+    {
+      "id": "B05",
+      "prompt": "重构配置校验逻辑，提取重复的 tier 字段检查，保持原有行为并运行测试。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.94,
+      "probabilities": {
+        "BALANCED": 0.96,
+        "FAST": 0.04,
+        "DEEP": 0.0
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 282.6
+    },
+    {
+      "id": "B06",
+      "prompt": "为 jev-codex 增加 --config 指向不存在文件时的友好错误提示，并编写测试。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.7,
+      "probabilities": {
+        "BALANCED": 0.8,
+        "DEEP": 0.0,
+        "FAST": 0.2
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": "low_confidence",
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 295.2
+    },
+    {
+      "id": "B07",
+      "prompt": "设计一道面向初学者的 CTF 密码学题目，包含题面、附件生成脚本、标准解法和验证脚本。",
+      "expected": "BALANCED",
+      "jev_choice": "BALANCED",
+      "confidence": 0.74,
+      "probabilities": {
+        "BALANCED": 0.83,
+        "FAST": 0.16,
+        "DEEP": 0.01
+      },
+      "effective_tier": "BALANCED",
+      "fallback_reason": "low_confidence",
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "medium",
+      "routing_latency_ms": 534.3
+    },
+    {
+      "id": "D01",
+      "prompt": "分析两个 Codex 会话并行使用共享 App Server 时，路由代理可能把一个 thread 的完成事件关联到另一个 thread 的竞态；构造可复现测试并修复。",
+      "expected": "DEEP",
+      "jev_choice": "DEEP",
+      "confidence": 1.0,
+      "probabilities": {
+        "BALANCED": 0.0,
+        "FAST": 0.0,
+        "DEEP": 1.0
+      },
+      "effective_tier": "DEEP",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "routing_latency_ms": 312.7
+    },
+    {
+      "id": "D02",
+      "prompt": "重新设计 WebSocket 断线重连流程，确保进行中的审批、thread 状态和未完成 turn 能恢复，同时避免重复执行；给出迁移方案和测试。",
+      "expected": "DEEP",
+      "jev_choice": "DEEP",
+      "confidence": 0.97,
+      "probabilities": {
+        "FAST": 0.0,
+        "BALANCED": 0.02,
+        "DEEP": 0.98
+      },
+      "effective_tier": "DEEP",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "routing_latency_ms": 307.8
+    },
+    {
+      "id": "D03",
+      "prompt": "审计用户任务文本从 Codex 终端经过代理发送到 Jev、再写入日志的完整链路，找出可能泄露凭证的边界情况，设计并验证修复方案。",
+      "expected": "DEEP",
+      "jev_choice": "DEEP",
+      "confidence": 1.0,
+      "probabilities": {
+        "BALANCED": 0.0,
+        "FAST": 0.0,
+        "DEEP": 1.0
+      },
+      "effective_tier": "DEEP",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "routing_latency_ms": 402.2
+    },
+    {
+      "id": "D04",
+      "prompt": "分析高并发下 Jev 超时、App Server 通知乱序和用户取消同时发生时的状态机问题，给出正确性约束、复现方法和修复方案。",
+      "expected": "DEEP",
+      "jev_choice": "DEEP",
+      "confidence": 1.0,
+      "probabilities": {
+        "FAST": 0.0,
+        "BALANCED": 0.0,
+        "DEEP": 1.0
+      },
+      "effective_tier": "DEEP",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "routing_latency_ms": 409.5
+    },
+    {
+      "id": "D05",
+      "prompt": "把当前单用户路由代理改造成多租户服务，设计租户隔离、身份认证、配额、日志边界和故障恢复，并给出分阶段实施方案。",
+      "expected": "DEEP",
+      "jev_choice": "DEEP",
+      "confidence": 0.98,
+      "probabilities": {
+        "BALANCED": 0.01,
+        "FAST": 0.0,
+        "DEEP": 0.99
+      },
+      "effective_tier": "DEEP",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "routing_latency_ms": 409.6
+    },
+    {
+      "id": "D06",
+      "prompt": "升级后长会话的首 token 延迟增加三倍，请跨模块测量 Jev 判定、WebSocket 转发、App Server 恢复和工具初始化，定位根因并验证优化效果。",
+      "expected": "DEEP",
+      "jev_choice": "DEEP",
+      "confidence": 1.0,
+      "probabilities": {
+        "FAST": 0.0,
+        "DEEP": 1.0,
+        "BALANCED": 0.0
+      },
+      "effective_tier": "DEEP",
+      "fallback_reason": null,
+      "selected_model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "routing_latency_ms": 351.9
+    }
+  ]
+}

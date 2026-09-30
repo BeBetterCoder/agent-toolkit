@@ -1,0 +1,22 @@
+[
+  {"id": "F01", "expected": "FAST", "prompt": "用两句话解释 git diff --check 这个命令的作用。"},
+  {"id": "F02", "expected": "FAST", "prompt": "在当前仓库里找到 choose_route 函数的定义位置，只告诉我文件和行号。"},
+  {"id": "F03", "expected": "FAST", "prompt": "把 README.md 中的‘安装步聚’改成‘安装步骤’，只修改这个错别字。"},
+  {"id": "F04", "expected": "FAST", "prompt": "将 config.example.toml 中的注释‘Change to route’改成‘Set to route’，不改其他内容。"},
+  {"id": "F05", "expected": "FAST", "prompt": "给 safe_task 函数补一句文档说明，写明它会截断输入，不修改函数实现。"},
+  {"id": "F06", "expected": "FAST", "prompt": "用三句话解释什么是竞态条件，不分析具体代码。"},
+  {"id": "F07", "expected": "FAST", "prompt": "简短解释 SQL 注入的基本原理，不分析具体项目。"},
+  {"id": "B01", "expected": "BALANCED", "prompt": "为 jev-codex 增加 --dry-run 参数，只输出本轮路由结果而不启动 Codex，并更新命令行帮助和测试。"},
+  {"id": "B02", "expected": "BALANCED", "prompt": "修复配置文件里 effort 值无效时错误提示不清楚的问题，并补充回归测试。"},
+  {"id": "B03", "expected": "BALANCED", "prompt": "调查为什么路径相关的测试在 Linux CI 通过、在 macOS 本地失败，修复问题并说明原因。"},
+  {"id": "B04", "expected": "BALANCED", "prompt": "给完成事件日志增加本轮选中的 tier 字段，更新相关实现和测试。"},
+  {"id": "B05", "expected": "BALANCED", "prompt": "重构配置校验逻辑，提取重复的 tier 字段检查，保持原有行为并运行测试。"},
+  {"id": "B06", "expected": "BALANCED", "prompt": "为 jev-codex 增加 --config 指向不存在文件时的友好错误提示，并编写测试。"},
+  {"id": "B07", "expected": "BALANCED", "prompt": "设计一道面向初学者的 CTF 密码学题目，包含题面、附件生成脚本、标准解法和验证脚本。"},
+  {"id": "D01", "expected": "DEEP", "prompt": "分析两个 Codex 会话并行使用共享 App Server 时，路由代理可能把一个 thread 的完成事件关联到另一个 thread 的竞态；构造可复现测试并修复。"},
+  {"id": "D02", "expected": "DEEP", "prompt": "重新设计 WebSocket 断线重连流程，确保进行中的审批、thread 状态和未完成 turn 能恢复，同时避免重复执行；给出迁移方案和测试。"},
+  {"id": "D03", "expected": "DEEP", "prompt": "审计用户任务文本从 Codex 终端经过代理发送到 Jev、再写入日志的完整链路，找出可能泄露凭证的边界情况，设计并验证修复方案。"},
+  {"id": "D04", "expected": "DEEP", "prompt": "分析高并发下 Jev 超时、App Server 通知乱序和用户取消同时发生时的状态机问题，给出正确性约束、复现方法和修复方案。"},
+  {"id": "D05", "expected": "DEEP", "prompt": "把当前单用户路由代理改造成多租户服务，设计租户隔离、身份认证、配额、日志边界和故障恢复，并给出分阶段实施方案。"},
+  {"id": "D06", "expected": "DEEP", "prompt": "升级后长会话的首 token 延迟增加三倍，请跨模块测量 Jev 判定、WebSocket 转发、App Server 恢复和工具初始化，定位根因并验证优化效果。"}
+]
