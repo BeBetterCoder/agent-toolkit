@@ -6,6 +6,7 @@ Jev Model Router 为 Codex CLI 提供按任务动态选择模型的能力。每�
 
 ## 前置条件
 
+- macOS（已验证）。实现依赖 Unix socket；Linux 和 WSL2 尚未验证，Windows 原生环境目前不支持。
 - Python 3.12+
 - [uv](https://docs.astral.sh/uv/)
 - 已安装并登录的 Codex CLI
