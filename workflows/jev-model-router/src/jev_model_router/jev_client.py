@@ -7,14 +7,24 @@ from typing import Any
 QUESTION = {
     "type": "choice",
     "instructions": (
-        "Choose the minimum reasoning tier needed for the current Codex user turn. "
-        "Judge task complexity only, not urgency or importance. Use the stated task "
-        "and metadata; do not infer missing repository details."
+        "Classify the Codex model capability and reasoning effort needed for the current "
+        "user task as FAST, BALANCED, or DEEP. Choose the least demanding tier that can "
+        "complete the task reliably. Use FAST for direct explanations, file or symbol "
+        "lookups, typo fixes, small documentation or configuration edits, and clearly "
+        "scoped code changes that require little investigation. Use BALANCED for routine "
+        "feature development, bug fixes, failing-test diagnosis, API adjustments, "
+        "related multi-file changes, and moderate refactoring that require investigation "
+        "and verification. Use DEEP for cross-module architecture work, subtle concurrency "
+        "or asynchronous lifecycle problems, security analysis requiring causal tracing, "
+        "and difficult debugging involving several interacting components or competing "
+        "hypotheses. Judge the reasoning and dependency depth required by the task, rather "
+        "than its keywords, length, urgency, or importance. Base the decision only on the "
+        "task and metadata provided."
     ),
     "criteria": {
-        "FAST": "Clear, local, low-complexity lookup, explanation, or small edit.",
-        "BALANCED": "Ordinary feature, bug fix, debugging, multi-file change, or unclear scope.",
-        "DEEP": "Cross-module architecture, subtle concurrency, complex security, or long dependency reasoning.",
+        "FAST": "Direct explanation, lookup, typo fix, small documentation or configuration edit, or clearly scoped local code change.",
+        "BALANCED": "Routine feature, bug fix, failing-test diagnosis, API adjustment, related multi-file change, or moderate refactor.",
+        "DEEP": "Cross-module architecture, subtle concurrency or asynchronous lifecycle problem, causal security analysis, or difficult multi-component debugging.",
     },
 }
 
