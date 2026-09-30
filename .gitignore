@@ -11,3 +11,5 @@ dist/
 build/
 coverage/
 *.egg-info/
+workflows/jev-model-router/config.toml
+workflows/jev-model-router/router-events.jsonl

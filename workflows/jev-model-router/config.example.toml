@@ -1,0 +1,16 @@
+mode = "shadow" # Change to "route" after reviewing shadow logs.
+confidence_threshold = 0.8
+jev_timeout_seconds = 5.0
+telemetry_path = "./router-events.jsonl"
+
+[tiers.FAST]
+model = "gpt-5.6-luna"
+effort = "low"
+
+[tiers.BALANCED]
+model = "gpt-5.6-sol"
+effort = "medium"
+
+[tiers.DEEP]
+model = "gpt-5.6-sol"
+effort = "high"
